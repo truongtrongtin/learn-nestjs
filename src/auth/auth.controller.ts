@@ -52,7 +52,6 @@ export class AuthController {
   @UseGuards(LocalGuard)
   @UsePipes(ValidationPipe)
   async logIn(
-    @Body() logInDto: LogInDto,
     @CurrentUser() currentUser: User,
     @Res({ passthrough: true }) reply: FastifyReply,
   ): Promise<void> {
